@@ -1,0 +1,23 @@
+#djinn_ie_form {
+    display: none; 
+    position: absolute;
+    z-index: 666;
+    padding: 10px;
+    background-color: #ffffff;
+    border: 1px solid #505050;
+    box-shadow: 5px 5px #c0c0c0;
+    border-radius: 5px;
+}
+
+.djinn_ie_editable .controls {
+    float: right;
+}
+
+.djinn_ie_editable .controls * {
+    float: left;
+}
+
+.djinn_ie_editable {
+    clear: both;
+}
+

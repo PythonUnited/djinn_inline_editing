@@ -1,0 +1,38 @@
+{% load i18n %}
+
+<div class="inlinerecordswidget">
+  
+  <input type="hidden" name="{{ name }}xx" 
+         class="djinn_ie_objects"
+         data-model="{{ widget.modelname }}"
+         id="id_{{ name }}" value="{{ value_str }}" />
+
+  <div class="actions">
+    <a href="#{{ name }}_add" data-model="{{ widget.modelname }}" 
+       class="djinn_ie_add_object">
+      {% trans 'Add' %}
+    </a>
+    <div id="{{ name }}_add"></div>
+  </div>
+
+  <ul
+     class="djinn_ie_addable"
+     data-model="{{ widget.modelname }}"
+     >
+    {% for obj in value %}
+    <li class="djinn_ie_editable" 
+        data-model="{{ widget.modelname }}"
+        data-object_id="{{ obj.id }}">
+      <div>
+        {{ obj.product }}
+      </div>
+
+      <span class="controls">
+        <a href="#" class="djinn_ie_rm">{% trans 'Delete' %}</a>
+        <a href="#">{% trans 'Edit' %}</a>
+      </span>
+    </li>
+    {% endfor %}
+  </ul>
+
+</div>
