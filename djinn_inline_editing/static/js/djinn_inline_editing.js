@@ -185,6 +185,8 @@ $(document).ready(function() {
             }
            
             djinn.ie.TEMPLATES[link.data("model")][link.data("mode")] = data;
+
+            $(document).triggerHandler("djinn_ie_template_loaded", [data]);
           });
       });
 
@@ -308,4 +310,7 @@ $(document).ready(function() {
                                     rec.data("object_id"),
                                     rec.hasClass("selected")]);
       });
+
+    $(document).triggerHandler("djinn_ie_ready"); 
+
   });
