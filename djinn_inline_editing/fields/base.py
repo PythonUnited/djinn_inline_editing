@@ -22,6 +22,7 @@ class InlineRecordsField(Field):
         super(InlineRecordsField, self).__init__(**kwargs)
         
         self.widget.model = model
+        self.widget.field = self
         self.model = model
         self.fkfield = fkfield
 
@@ -41,7 +42,7 @@ class InlineRecordsField(Field):
             elt[self.fkfield] = self.parent.pk
 
             try:
-                instance = self.model.objects.get(pk=elt.id)
+                instance = self.model.objects.get(pk=elt['id'])
             except:
                 instance = None
 

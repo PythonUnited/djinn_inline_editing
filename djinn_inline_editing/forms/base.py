@@ -32,7 +32,16 @@ class InlineRecordsMixin(object):
     
         for field in self.inline_fields:
 
+            keep = []
+
             for inline_obj in self.cleaned_data[field]:
                 inline_obj.save()
+                keep.append(inline_obj.id)
+
+            # Delete records that are not in new data
+            for inline_obj in self.initial[field]:
+
+                if not inline_obj.id in keep:
+                    inline_obj.delete()
 
         return obj

@@ -9,15 +9,31 @@
     border-radius: 5px;
 }
 
-.djinn_ie_editable .controls {
+.inlinerecordswidget .controls {
     float: right;
 }
 
 .djinn_ie_editable .controls * {
     float: left;
+    margin-right: 5px;
 }
 
 .djinn_ie_editable {
     clear: both;
 }
 
+.djinn_ie_addable li {
+    list-style: none;
+    border: 1px solid #c0c0c0;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.djinn_ie_addable li.selected {
+    background-color: #c0c0c0;
+}
+
+.djinn_ie_addable li:hover {
+    background-color: #c0c0c0;
+}

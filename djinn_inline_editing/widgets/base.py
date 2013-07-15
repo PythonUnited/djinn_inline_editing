@@ -9,7 +9,8 @@ class InlineRecordsWidget(forms.widgets.Widget):
 
     """ Marker widget """
 
-    template_name = "widgets/inlinerecords.html"
+    template_name = "djinn_inline_editing/widgets/inlinerecords.html"
+    label = ""
 
     def _json(self, value):
 
